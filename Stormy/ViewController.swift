@@ -23,16 +23,20 @@ class ViewController: UIViewController {
         let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
         let forecastURL = NSURL(string: "37.8267,-122.423", relativeToURL: baseURL)
         
-        if let plistPath = NSBundle.mainBundle().pathForResource("CurrentWeather", ofType: "plist"),
-            let weatherDictionary = NSDictionary(contentsOfFile: plistPath),
-        let currentWeatherDictionary = weatherDictionary["currently"] as? [String:AnyObject] {
-            
-            let currentWeather = CurrentWeather(weatherDictionary: currentWeatherDictionary)
-            
-            currentTemperatureLabel?.text = "\(currentWeather.temperature)º"
-            currentHumidityLabel?.text = "\(currentWeather.humidity)%"
-            currentPrecipitationLabel?.text = "\(currentWeather.precipProbability)%"
-        }
+        // Use NSURLSession API to fetch data
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration)
+        
+        // NSURLRequest oject
+        let request = NSURLRequest(URL: forecastURL!)
+        
+        let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            print(data)
+            print("I'm on a background thread")
+            })
+        
+        print("I'm on the main thread")
+        dataTask.resume()
     }
 
     override func didReceiveMemoryWarning() {
