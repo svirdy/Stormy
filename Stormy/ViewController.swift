@@ -14,10 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentHumidityLabel: UILabel?
     @IBOutlet weak var currentPrecipitationLabel: UILabel?
     
+    private let forecastAPIKey = "e3c8c8c6681cb3eb7e4417e08e115037"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(forecastAPIKey)/")
+        let forecastURL = NSURL(string: "37.8267,-122.423", relativeToURL: baseURL)
         
         if let plistPath = NSBundle.mainBundle().pathForResource("CurrentWeather", ofType: "plist"),
             let weatherDictionary = NSDictionary(contentsOfFile: plistPath),
