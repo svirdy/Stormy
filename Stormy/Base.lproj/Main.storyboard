@@ -73,6 +73,9 @@
                                     <action selector="refreshWeather" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2B-kf-E0e"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cbU-3a-yz2">
+                                <rect key="frame" x="290" y="62" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -80,6 +83,7 @@
                             <constraint firstItem="wgw-RF-JyS" firstAttribute="top" secondItem="vYp-LS-hoq" secondAttribute="bottom" constant="9" id="7Bc-q2-Hnp"/>
                             <constraint firstItem="g0s-Bl-uXZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="AE7-Zn-7SI"/>
                             <constraint firstItem="VCV-Gz-9wp" firstAttribute="top" relation="lessThanOrEqual" secondItem="g0s-Bl-uXZ" secondAttribute="bottom" constant="37" id="Af1-zQ-T7s"/>
+                            <constraint firstItem="cbU-3a-yz2" firstAttribute="centerY" secondItem="OXj-gG-LTw" secondAttribute="centerY" id="Af3-zV-9Km"/>
                             <constraint firstItem="vYp-LS-hoq" firstAttribute="top" secondItem="VCV-Gz-9wp" secondAttribute="bottom" constant="6" id="Bgo-m0-b69"/>
                             <constraint firstItem="vYp-LS-hoq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="E9G-CL-foD"/>
                             <constraint firstItem="NQ3-RA-SMF" firstAttribute="top" secondItem="nEy-0P-fYf" secondAttribute="bottom" constant="9" id="Fc6-N8-6su"/>
@@ -90,6 +94,7 @@
                             <constraint firstItem="wgw-RF-JyS" firstAttribute="centerX" secondItem="vYp-LS-hoq" secondAttribute="centerX" id="PGB-tw-ID4"/>
                             <constraint firstItem="VCV-Gz-9wp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VYZ-NI-9mD"/>
                             <constraint firstItem="nEy-0P-fYf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-65.5" id="g0n-2N-hWW"/>
+                            <constraint firstItem="cbU-3a-yz2" firstAttribute="centerX" secondItem="OXj-gG-LTw" secondAttribute="centerX" id="gOW-Bf-Q7L"/>
                             <constraint firstItem="nEy-0P-fYf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="65" id="hKa-Ga-Jmn"/>
                             <constraint firstItem="VCV-Gz-9wp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jte-6r-7iJ"/>
                             <constraint firstItem="OXj-gG-LTw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="n8W-jY-jdh"/>
@@ -106,11 +111,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="cbU-3a-yz2" id="L4j-ye-cwj"/>
                         <outlet property="currentHumidityLabel" destination="NQ3-RA-SMF" id="eRP-iY-btg"/>
                         <outlet property="currentPrecipitationLabel" destination="wgw-RF-JyS" id="PtU-ls-3dy"/>
                         <outlet property="currentTemperatureLabel" destination="VCV-Gz-9wp" id="lc7-bd-50g"/>
                         <outlet property="currentWeatherIcon" destination="g0s-Bl-uXZ" id="9S7-pm-Y2q"/>
                         <outlet property="currentWeatherSummary" destination="NbL-Sw-byt" id="mhs-Am-FPw"/>
+                        <outlet property="refreshButton" destination="OXj-gG-LTw" id="D5i-yb-OqO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
