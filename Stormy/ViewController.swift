@@ -16,12 +16,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentWeatherIcon: UIImageView?
     @IBOutlet weak var currentWeatherSummary: UILabel?
     
+    
     private let forecastAPIKey = "e3c8c8c6681cb3eb7e4417e08e115037"
     let coordinate: (lat: Double, long: Double) = (37.8267,-122.423)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        retrieveWeatherForecast()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func retrieveWeatherForecast() {
         let forecastService = ForecastService(APIKey: forecastAPIKey)
         forecastService.getForecast(coordinate.lat, long: coordinate.long) {
             (let currently) in
@@ -51,14 +61,12 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func refreshWeather() {
+        retrieveWeatherForecast()
     }
-
-
+    
+    
 }
 
