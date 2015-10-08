@@ -16,8 +16,10 @@ class WeeklyTableViewController: UITableViewController {
     @IBOutlet weak var currentPrecipitationLabel: UILabel!
     @IBOutlet weak var currentTemperatureRangeLabel: UILabel!
     
-    let forecastAPIKey = "e3c8c8c6681cb3eb7e4417e08e115037"
+    private let forecastAPIKey = "e3c8c8c6681cb3eb7e4417e08e115037"
     let coordinate: (lat: Double, long: Double) = (37.8267,-122.423)
+    
+    var weeklyWeather: [DailyWeather] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +65,9 @@ class WeeklyTableViewController: UITableViewController {
     func retrieveWeatherForecast() {
         let forecastService = ForecastService(APIKey: forecastAPIKey)
         forecastService.getForecast(coordinate.lat, long: coordinate.long) {
-            (let currently) in
-            if let currentWeather = currently {
+            (let forecast) in
+            if let weatherForecast = forecast,
+            let currentWeather = weatherForecast.currentWeather {
                 dispatch_async(dispatch_get_main_queue()) {
                     // Execute closure
                     
@@ -80,7 +83,12 @@ class WeeklyTableViewController: UITableViewController {
                         self.currentWeatherIcon?.image = icon
                     }
                     
+                    self.weeklyWeather = weatherForecast.weekly
                     
+                    if let highTemp = self.weeklyWeather.first?.maxTemperature,
+                        let lowTemp = self.weeklyWeather.first?.minTemperature {
+                            self.currentTemperatureRangeLabel?.text = "↑\(highTemp)º↓\(lowTemp)º"
+                    }
                     
                 }
             }
