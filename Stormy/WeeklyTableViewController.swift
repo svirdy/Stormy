@@ -38,6 +38,9 @@ class WeeklyTableViewController: UITableViewController {
         // Set table view's background propery
         tableView.backgroundView = BackgroundView()
         
+        // Set custom height for table view row
+        tableView.rowHeight = 64
+        
         // Change the font and size of nav bar text
         if let navBarFont = UIFont(name: "HelveticaNeue-Thin", size: 20.0) {
         let navBarAttributesDictionary: [String:AnyObject]? = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: navBarFont]
@@ -56,16 +59,42 @@ class WeeklyTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return weeklyWeather.count
     }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Forecast"
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as! DailyWeatherTableViewCell
         
         let dailyWeather = weeklyWeather[indexPath.row]
-        cell.textLabel?.text = dailyWeather.day
+        if let maxTemp = dailyWeather.maxTemperature {
+            cell.temperatureLabel.text = "\(maxTemp)º"
+        }
+        cell.weatherIcon.image = dailyWeather.icon
+        cell.dayLabel.text = dailyWeather.day
         return cell
     }
 
-
+    // MARK: - Delegate Methods
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor(red: 170/255.0, green: 131/255.0, blue: 224/225.0, alpha: 1.0)
+        
+        if let header = view as? UITableViewHeaderFooterView {
+            header.textLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 14.0)
+            header.textLabel?.textColor = UIColor.whiteColor()
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.contentView.backgroundColor = UIColor(red: 165/255.0, green: 142/255.0, blue: 203/255.0, alpha: 1.0)
+        let highlightView = UIView()
+        highlightView.backgroundColor = UIColor(red: 165/255.0, green: 142/255.0, blue: 203/255.0, alpha: 1.0)
+        cell?.selectedBackgroundView = highlightView
+    }
+    
     // MARK: - Weather Fetching
 
     func retrieveWeatherForecast() {
