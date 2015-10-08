@@ -15,6 +15,7 @@
 		17C350F61BC3619D006C56BE /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C350F51BC3619D006C56BE /* WeeklyTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		17C350F81BC362A0006C56BE /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C350F71BC362A0006C56BE /* BackgroundView.swift */; settings = {ASSET_TAGS = (); }; };
 		17EE8BC91BC6614700B02567 /* DailyWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE8BC81BC6614700B02567 /* DailyWeatherTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		17EE8BCB1BC737E900B02567 /* DetailBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE8BCA1BC737E900B02567 /* DetailBackgroundView.swift */; settings = {ASSET_TAGS = (); }; };
 		17FEADF81BBA2A3200FD4F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEADF71BBA2A3200FD4F67 /* AppDelegate.swift */; };
 		17FEADFA1BBA2A3200FD4F67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEADF91BBA2A3200FD4F67 /* ViewController.swift */; };
 		17FEADFD1BBA2A3200FD4F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FEADFB1BBA2A3200FD4F67 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		17C350F51BC3619D006C56BE /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
 		17C350F71BC362A0006C56BE /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		17EE8BC81BC6614700B02567 /* DailyWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		17EE8BCA1BC737E900B02567 /* DetailBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBackgroundView.swift; sourceTree = "<group>"; };
 		17FEADF41BBA2A3200FD4F67 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FEADF71BBA2A3200FD4F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FEADF91BBA2A3200FD4F67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				17FEADFB1BBA2A3200FD4F67 /* Main.storyboard */,
 				17C350F71BC362A0006C56BE /* BackgroundView.swift */,
 				17EE8BC81BC6614700B02567 /* DailyWeatherTableViewCell.swift */,
+				17EE8BCA1BC737E900B02567 /* DetailBackgroundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				175BDF981BC5DF15008FEBD0 /* DailyWeather.swift in Sources */,
 				17EE8BC91BC6614700B02567 /* DailyWeatherTableViewCell.swift in Sources */,
 				170C27D41BC0A09600F21F3E /* NetworkOperation.swift in Sources */,
+				17EE8BCB1BC737E900B02567 /* DetailBackgroundView.swift in Sources */,
 				17FEADFA1BBA2A3200FD4F67 /* ViewController.swift in Sources */,
 				175BDF9A1BC5E112008FEBD0 /* Icon.swift in Sources */,
 				175BDF9C1BC5FF1B008FEBD0 /* Forecast.swift in Sources */,

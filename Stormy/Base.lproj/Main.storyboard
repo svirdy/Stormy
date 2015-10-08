@@ -121,6 +121,7 @@
                                     <outlet property="dayLabel" destination="416-NG-hvt" id="pI1-YQ-iD3"/>
                                     <outlet property="temperatureLabel" destination="Oi6-Qd-FEA" id="2Nt-cJ-Aw9"/>
                                     <outlet property="weatherIcon" destination="hx0-wz-Vn0" id="cyX-86-k2H"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showDaily" id="tRp-N0-sXN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -141,7 +142,6 @@
                         <outlet property="currentTemperatureLabel" destination="4Yl-gr-vWt" id="9QO-YL-3Kv"/>
                         <outlet property="currentTemperatureRangeLabel" destination="Tu1-rW-nU1" id="ZSS-2z-rcV"/>
                         <outlet property="currentWeatherIcon" destination="Czs-1k-tkX" id="GHK-v8-jJo"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="bkO-RB-Ezn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SqQ-iz-MaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +156,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="DetailBackgroundView" customModule="Stormy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
@@ -174,6 +174,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Tfp-En-yFf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.66666666666666663" green="0.51372549019607838" blue="0.8784313725490196" alpha="0.5" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
