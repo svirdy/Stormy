@@ -335,7 +335,7 @@
 				INFOPLIST_FILE = Stormy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sachinvirdy.Stormy;
+				PRODUCT_BUNDLE_IDENTIFIER = Stormy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -348,7 +348,7 @@
 				INFOPLIST_FILE = Stormy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sachinvirdy.Stormy;
+				PRODUCT_BUNDLE_IDENTIFIER = Stormy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
